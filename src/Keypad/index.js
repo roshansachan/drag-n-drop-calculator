@@ -83,7 +83,7 @@ export default function Keypad (props) {
             </div>
             <div>
                 <OperatorPad>
-                    <div>
+                    <div style={{ display:'flex', flexDirection:'column' }} >
                         {
                             OperatorsRow1.map((calculatorKey)=> <DraggableKey
                                 setDraggingKey={props.setDraggingKey}
@@ -94,7 +94,7 @@ export default function Keypad (props) {
                                 isSelected={calculatorKey.isSelected}  />)
                         }
                     </div>
-                    <div>
+                    <div style={{ display:'flex', flexDirection:'column' }} >
                         {
                             OperatorsRow2.map((calculatorKey)=> <DraggableKey
                                 setDraggingKey={props.setDraggingKey}
@@ -105,7 +105,6 @@ export default function Keypad (props) {
                                 isSelected={calculatorKey.isSelected}  />)
                         }
                     </div>
-
                 </OperatorPad>
             </div>
 
