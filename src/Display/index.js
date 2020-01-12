@@ -48,8 +48,8 @@ export default function Display (props){
                 <Operator selectCalculatorKey={props.selectCalculatorKey} draggingKey={props.draggingKey} callSetDisplayKey={props.setDisplayKey}  content={props.displayKeys[DISPLAY_SLOTS.OPERATOR].symbol} />
                 <Operand2 selectCalculatorKey={props.selectCalculatorKey} draggingKey={props.draggingKey} callSetDisplayKey={props.setDisplayKey}  content={props.displayKeys[DISPLAY_SLOTS.OPERAND2].symbol}/>
             </Wrapper>
-            <Wrapper >
-                <KeyDesign bgColor='transparent' color="#61c9a6"  isEvenKey={true} >=</KeyDesign>
+            <Wrapper style={{paddingLeft:0,paddingRight:0}} >
+                <KeyDesign  bgColor='transparent' color="#61c9a6"  isEvenKey={true} >=</KeyDesign>
             </Wrapper>
             <Wrapper >
                 <KeyDesign bgColor='transparent' style={{justifyContent: 'flex-start'}} color="#61c9a6"  isEvenKey={true} >{ props.result}</KeyDesign>
