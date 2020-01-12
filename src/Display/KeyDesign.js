@@ -107,3 +107,11 @@ export default  styled.div`
 `;
 
 
+export const DefaultImg = styled.img`
+    width:30px;  
+    @media (min-width: 768px) {
+        width:auto;
+    }
+    
+    
+`;

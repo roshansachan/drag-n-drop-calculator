@@ -1,7 +1,8 @@
 import {useDrop} from "react-dnd";
 import KEY_TYPES from "../Calculator/constants";
 import DISPLAY_SLOTS from "../Display/constants";
-import Key from "./KeyDesign";
+import Key,{ DefaultImg }  from "./KeyDesign";
+
 import ResetOverlay from './ResetOverlay';
 import getNiceSymbol from "../services/nice_symbol";
 import operandDefaultImg from "../Display/operand_default.png";
@@ -32,7 +33,7 @@ export function Operand1({content,callSetDisplayKey,draggingKey,selectCalculator
             disable={disable}
 
             ref={dropNumberKey} >
-            { content ? getNiceSymbol(content) : <img src={operandDefaultImg} alt="drop symbol"/>}
+            { content ? getNiceSymbol(content) : <DefaultImg src={operandDefaultImg} alt="drop symbol"/>}
             {content && <ResetOverlay className="resetOverlay" >Reset</ResetOverlay>  }
         </Key>
     )
@@ -62,7 +63,7 @@ export function Operator({content,callSetDisplayKey,draggingKey,selectCalculator
              canDrop={canDrop}
              disable={disable}
              ref={dropOperatorKey} >
-            { content ? getNiceSymbol(content) : <img src={operatorDefaultImg} alt="drop symbol"/>}
+            { content ? getNiceSymbol(content) : <DefaultImg src={operatorDefaultImg} alt="drop symbol"/>}
             {content && <ResetOverlay className="resetOverlay" >Reset</ResetOverlay>  }
         </Key>
     )
@@ -88,7 +89,7 @@ export function Operand2({content,callSetDisplayKey,draggingKey,selectCalculator
              canDrop={canDrop}
              disable={disable}
              ref={dropNumberKey} >
-            { content ? getNiceSymbol(content) : <img src={operandDefaultImg} alt="drop symbol"/>}
+            { content ? getNiceSymbol(content) : <DefaultImg src={operandDefaultImg} alt="drop symbol"/>}
             {content && <ResetOverlay className="resetOverlay" >Reset</ResetOverlay>  }
         </Key>
     )
