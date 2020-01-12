@@ -13,18 +13,21 @@ import Keypad from "../Keypad/index";
 import Display from "../Display/index";
 
 const Title = styled.h1`
-    font-size: 60px;
+    
     text-align:center;   
     color: #000000;
     font-weight: 300;
-    margin-bottom:100px;
+    
+    font-size: 30px;
+    margin-bottom: 30px;
+      
     @media (min-width: 768px) { 
-        font-size: 60px;
-        margin-bottom:100px;
+        font-size: 40px;
+        margin-bottom:50px;
     }
     @media (min-width: 992px) {
-    font-size: 60px;
-    margin-bottom:100px;
+        font-size: 60px;
+        margin-bottom:100px;
     }
     
     
