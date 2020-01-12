@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DISPLAY_SLOTS from './constants';
 import { Operand1, Operand2, Operator } from "./DropableKey";
 import KeyDesign from './KeyDesign';
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const Screen = styled.div`
 display: flex;
@@ -57,12 +57,12 @@ export default function Display (props){
         </Screen>
     )
 }
-
-
-Display.propTypes={
-    displayKeys: PropTypes.object,
-    draggingKey: PropTypes.object, //{   symbol: key.id, type: key.type }
-    selectCalculatorKey: PropTypes.func,
-    setDisplayKey: PropTypes.func,
-    result: PropTypes.any
-}
+//
+//
+// Display.propTypes={
+//     displayKeys: PropTypes.object,
+//     draggingKey: PropTypes.object, //{   symbol: key.id, type: key.type }
+//     selectCalculatorKey: PropTypes.func,
+//     setDisplayKey: PropTypes.func,
+//     result: PropTypes.any
+// }

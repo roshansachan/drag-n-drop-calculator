@@ -46,7 +46,7 @@ export default  styled.div`
     }};  
     
     
-    transition:all 0.3s;    
+        
     font-size: ${(props)=>  props.type === KEY_TYPES.NUMBER_KEY ? '30px' : '40px' };
     display:flex;
     justify-content:center;

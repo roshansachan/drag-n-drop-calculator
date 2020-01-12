@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend';
 import TouchBackend from 'react-dnd-touch-backend'
 import {isMobile} from 'react-device-detect';
-
+import MultiBackend, {Preview} from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 import getResult from '../services/engine';
 import format from '../services/format';
 import styled from 'styled-components';
@@ -11,6 +12,12 @@ import KEY_TYPES from './constants';
 import DISPLAY_SLOTS from '../Display/constants';
 import Keypad from "../Keypad/index";
 import Display from "../Display/index";
+
+import KeyDesign from "../Keypad/KeyDesign";
+const GeneratePreview = () => {
+    const {item,style} = useContext(Preview.Context);
+    return <KeyDesign style={{...style}} type={item.type} isEvenKey={(item.id*1) % 2 === 0} > { item.id } </KeyDesign>;
+};
 
 const Title = styled.h1`
     
@@ -93,11 +100,14 @@ class Calculator extends React.Component {
     };
     render() {
         return (
-        <DndProvider backend={ isMobile ? TouchBackend : Backend}>
+        <DndProvider backend={MultiBackend} options={HTML5toTouch}>
             <div>
                 <Title>DRAG AND DROP CALCULATOR</Title>
                 <Keypad setDraggingKey={this.setDraggingKey} selectCalculatorKey={this.selectCalculatorKey} calculatorKeys={this.state.calculatorKeys} />
                 <Display  draggingKey={this.state.draggingKey} result={this.state.result} setDisplayKey={this.setDisplayKey} displayKeys={this.state.displayKeys}  selectCalculatorKey={this.selectCalculatorKey}  />
+                <Preview>
+                    <GeneratePreview />
+                </Preview>
             </div>
         </DndProvider>)
     }

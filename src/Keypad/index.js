@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import DraggableKey from "./DraggableKey";
 
@@ -114,9 +114,9 @@ export default function Keypad (props) {
 
     )
 }
-
-Keypad.propTypes={
-    calculatorKeys: PropTypes.array,
-    setDraggingKey: PropTypes.func,
-    selectCalculatorKey: PropTypes.func,
-}
+//
+// Keypad.propTypes={
+//     calculatorKeys: PropTypes.array,
+//     setDraggingKey: PropTypes.func,
+//     selectCalculatorKey: PropTypes.func,
+// }
