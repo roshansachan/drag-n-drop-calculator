@@ -9,11 +9,12 @@ import KEY_TYPES from './constants';
 import DISPLAY_SLOTS from '../Display/constants';
 import Keypad from "../Keypad/index";
 import Display from "../Display/index";
+import getNiceSymbol from "../services/nice_symbol";
 
 import KeyDesign from "../Keypad/KeyDesign";
 const GeneratePreview = () => {
     const {item,style} = useContext(Preview.Context);
-    return <KeyDesign style={{...style}} type={item.type} isEvenKey={(item.id*1) % 2 === 0} > { item.id } </KeyDesign>;
+    return <KeyDesign style={{...style}} type={item.type} isEvenKey={(item.id*1) % 2 === 0} > {  getNiceSymbol(item.id)  } </KeyDesign>;
 };
 
 const Title = styled.h1`
