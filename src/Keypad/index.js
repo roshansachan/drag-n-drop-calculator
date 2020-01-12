@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import DraggableKey from "./DraggableKey";
 
@@ -11,6 +11,9 @@ const Board =  styled.div`
     width:320px;
     padding: 15px 0 15px 15px;
     background-color: white;
+    @media (max-width: 500px) {     
+        padding: 15px 0;
+    }
     @media (min-width: 768px) { 
         width:  700px;
         align-items: center;
@@ -24,7 +27,7 @@ const Board =  styled.div`
     }            
 `;
 const NumberPad = styled.div`    
-    justify-content: flex-center;
+    justify-content: center;
     @media (min-width: 768px) { 
         justify-content: flex-end;
     }
@@ -114,9 +117,9 @@ export default function Keypad (props) {
 
     )
 }
-//
-// Keypad.propTypes={
-//     calculatorKeys: PropTypes.array,
-//     setDraggingKey: PropTypes.func,
-//     selectCalculatorKey: PropTypes.func,
-// }
+
+Keypad.propTypes={
+    calculatorKeys: PropTypes.array,
+    setDraggingKey: PropTypes.func,
+    selectCalculatorKey: PropTypes.func,
+}

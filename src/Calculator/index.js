@@ -1,8 +1,5 @@
 import React,{useContext} from 'react';
-import { DndProvider } from 'react-dnd'
-import Backend from 'react-dnd-html5-backend';
-import TouchBackend from 'react-dnd-touch-backend'
-import {isMobile} from 'react-device-detect';
+import { DndProvider } from 'react-dnd';
 import MultiBackend, {Preview} from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 import getResult from '../services/engine';

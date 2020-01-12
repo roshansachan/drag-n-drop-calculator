@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DISPLAY_SLOTS from './constants';
 import { Operand1, Operand2, Operator } from "./DropableKey";
 import KeyDesign from './KeyDesign';
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Screen = styled.div`
 display: flex;
@@ -26,7 +26,7 @@ justify-content: center;
 
 const Wrapper = styled.div`
 display:flex;
-padding:  15px 10px;
+padding:  15px 3px;
 
 @media (min-width: 768px) { 
         justify-content: flex-end;
@@ -38,7 +38,25 @@ padding:  15px 10px;
     }
 `;
 
-
+const EqualKey = styled.div`
+@media (max-width: 500px) {
+    
+    div{
+        padding-right:0;    
+        width:35px;
+    }
+    
+}
+`
+const Result = styled.div`
+@media (max-width: 500px) {
+   
+    div{
+        padding-right:0;
+    }
+    
+}
+`
 export default function Display (props){
     return(
         <Screen>
@@ -49,20 +67,26 @@ export default function Display (props){
                 <Operand2 selectCalculatorKey={props.selectCalculatorKey} draggingKey={props.draggingKey} callSetDisplayKey={props.setDisplayKey}  content={props.displayKeys[DISPLAY_SLOTS.OPERAND2].symbol}/>
             </Wrapper>
             <Wrapper style={{paddingLeft:0,paddingRight:0}} >
-                <KeyDesign  bgColor='transparent' color="#61c9a6"  isEvenKey={true} >=</KeyDesign>
+                <EqualKey>
+                    <KeyDesign bgColor='transparent' color="#61c9a6"  isEvenKey={true} >=</KeyDesign>
+                </EqualKey>
+
             </Wrapper>
-            <Wrapper >
-                <KeyDesign bgColor='transparent' style={{justifyContent: 'flex-start'}} color="#61c9a6"  isEvenKey={true} >{ props.result}</KeyDesign>
+            <Wrapper>
+                <Result>
+                    <KeyDesign bgColor='transparent' style={{justifyContent: 'flex-start'}} color="#61c9a6"  isEvenKey={true} >{ props.result}</KeyDesign>
+                </Result>
+
             </Wrapper>
         </Screen>
     )
 }
-//
-//
-// Display.propTypes={
-//     displayKeys: PropTypes.object,
-//     draggingKey: PropTypes.object, //{   symbol: key.id, type: key.type }
-//     selectCalculatorKey: PropTypes.func,
-//     setDisplayKey: PropTypes.func,
-//     result: PropTypes.any
-// }
+
+
+Display.propTypes={
+    displayKeys: PropTypes.object,
+    draggingKey: PropTypes.object, //{   symbol: key.id, type: key.type }
+    selectCalculatorKey: PropTypes.func,
+    setDisplayKey: PropTypes.func,
+    result: PropTypes.any
+}
